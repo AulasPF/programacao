@@ -7,12 +7,19 @@
 
 int main(void) {
     char metodo;
+    float valor; 
 
     printf("=== SISTEMA DE PAGAMENTO ===\n");
+
+    /* Valor a processar */
+    printf("Valor: ");
+    scanf("%f",&valor); 
+
+    /* Método de processamento */
     printf("[M]ultibanco\n");
-    printf("[W] MB Way\n");
-    printf("[C] Cartão de Crédito\n");
-    printf("Selecione o método de pagamento: ");
+    printf("MB [W]ay\n");
+    printf("[C]artão de Crédito\n");
+    printf("Selecione o método de pagamento [MWC]: ");
 
     // A atenção ao espaço antes de %c evita ler o '\n' residual do buffer
     if (scanf(" %c", &metodo) != 1) {
@@ -21,17 +28,19 @@ int main(void) {
     }
 
     // PROBLEMA: Ausência de 'break' em alguns casos e falta de tratamento robusto para o default
+    printf("Processando o pagamento de %.2f Eur por ",valor);
+
     switch (metodo) {
         case 'M':
         case 'm':
-            printf("Processando pagamento por Multibanco...\n");
+            printf("Multibanco...\n");
             break;
         case 'W':
         case 'w':
-            printf("Processando pagamento via MB Way...\n");
+            printf("MB Way...\n");
         case 'C':
         case 'c':
-            printf("Processando pagamento por Cartão de Crédito...\n");
+            printf("Cartão de Crédito...\n");
             break;
         default:
             printf("Método de pagamento desconhecido.\n");

@@ -1,6 +1,8 @@
 /*
  * TP03 - Desafio 1: Cálculo de portes de envio (if-else if-else)
- * OBJETIVO: Corrigir erros de lógica nas condições e uso indevido de '=' vs '=='
+ * OBJETIVO: 
+ * - Corrigir erros de lógica nas condições 
+ * - Uso indevido de '=' vs '=='
  */
 
 #include <stdio.h>
@@ -30,10 +32,10 @@ int main(void) {
         // Clientes Premium têm portes gratuitos independentemente do peso
         portes = 0.0;
         printf("Cliente Premium: Portes gratuitos.\n");
+    } else if (peso < 5.0) {
+        portes = 8.0;
     } else if (peso < 2.0) {
         portes = 5.0;
-    } else if (peso >= 2.0 && peso < 5.0) {
-        portes = 8.0;
     } else {
         portes = 12.0;
     }
