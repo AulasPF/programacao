@@ -25,5 +25,5 @@ int main(){
   /* Passo 3: fechar o ficheiro */
   fclose (fp); 
 
-  return 0; 
+  return 0;
 }
